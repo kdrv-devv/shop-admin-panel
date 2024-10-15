@@ -128,7 +128,7 @@ header > div {
   justify-content: space-between;
   padding: 20px 10px;
   border: 8px;
-  position: absolute;
+  position: fixed;
   top: -200px;
   left: 75px;
   transition: 0.4s;
@@ -321,6 +321,7 @@ header > div {
 
 .all-cards > div {
   display: grid;
+  gap: 30px;
   margin-top: 100px;
   grid-template-columns: repeat(4, 1fr);
 }
@@ -330,7 +331,7 @@ header > div {
   flex-direction: column;
   border-radius: 20px;
   width: 260px;
-  height: 433px;
+  height: auto;
   padding: 16px;
   box-shadow: 0 10px 30px 0 rgba(209, 213, 223, 0.5);
   background: #fff;
@@ -359,6 +360,7 @@ header > div {
   font-size: 14px;
   line-height: 143%;
   color: #141821;
+  height: 80px;
 }
 
 .stars-father {

@@ -1,0 +1,68 @@
+{
+    "products":[
+      {
+        "id":1,
+        "title":"Кондиционер Immer T-Crystal 12 Inverter",
+        "price":4109000 ,
+        "category":"Кондиционеры",
+        "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSN44eHalQCLYW9wKPE1lnMq_fmxSKukMDSBA&s"
+      },
+
+      {
+        "id":2,
+        "title":"Кондиционер Midea Naomi Inverter 12",
+        "price":5959000,
+        "category":"Кондиционеры",
+        "img":"https://i.ebayimg.com/images/g/5PsAAOSwhJlkg1-1/s-l960.webp"
+
+      },
+      {
+        "id":3,
+        "title":"Смартфон Samsung Galaxy A158/256GB Blue",
+        "price":2359000,
+        "category":"Смартфоны",
+        "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSN44eHalQCLYW9wKPE1lnMq_fmxSKukMDSBA&s"
+    },
+    {
+        "id":4,
+        "title":"Смартфон Honor X8b 8/256G Благороднызеленый",
+        "price":2999000,
+        "category":"Смартфоны",
+        "img":"https://object.pscloud.io/cms/cms/Photo/img_0_77_381_0.webp"
+    },
+    {
+        "id":5,
+        "title":"Чайник электрический Tefal KI750D30",
+        "price":1329000,
+        "category":"Бытовая техника",
+        "img":"https://digitalcontent.api.tesco.com/v2/media/marketplace/e7b88d62-1c08-450a-9b3e-13c7ebf817d3/26KdzSOoCefu0q792gcPzlWuQ_169138275.jpeg?h=960&w=960"
+
+    },
+
+    {
+        "id":6,
+        "title":"Стиральная машина MoonX SY6000W 6 Кг",
+        "price":2939000,
+        "category":"Бытовая техника",
+        "img":"https://api.cabinet.smart-market.uz/uploads/images/ff80818118195c090ae32a84"
+
+    },
+    {
+        "id":7,
+        "title":"Тара Вестовер: Талаба (юмшоқ муқова)",
+        "price":60000,
+        "category":"Книги",
+        "img":"https://i.ebayimg.com/images/g/5PsAAOSwhJlkg1-1/s-l960.webp"
+
+
+    },
+    {
+        "id":8,
+        "title":"Грант Кардон: Савдо санъати. Бизнес ва ҳаётда мақсадларингизга эришиш йўли",
+        "price":99000,
+        "category":"Книги",
+        "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSN44eHalQCLYW9wKPE1lnMq_fmxSKukMDSBA&s"
+
+    }
+]
+}
