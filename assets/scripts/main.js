@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   let hide = document.querySelector(".hide");
   let hideButton = document.querySelector(".category");
-
+  
   hideButton.addEventListener("click", function () {
     hide.classList.toggle("top");
   });
@@ -82,6 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
     adminTodo.innerHTML = "";
 
     val.forEach((element) => {
+        
       adminTodo.innerHTML += `
                 <tr>
                     <th scope="row">${element.id}</th>
@@ -98,3 +99,103 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 // finish todo output
+
+
+
+// admin panel form input start 
+let form = document.querySelector(".input-items");
+let productName = document.querySelector("#product-name")
+let productPrice = document.querySelector("#product-price")
+
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  
+  const fileInput = form.querySelector("#file-upload");
+  const file = fileInput.files[0];  
+  
+  if (file) {
+
+    if (file.type == "image/png" || file.type == "image/jpg" || file.type == "image/jpeg") {
+      const reader = new FileReader();
+    let baseImg = ""
+      reader.onload = function(e) {
+
+        baseImg = e.target.result
+        
+        fetch("http://localhost:3000/products",{
+            method:"POST",
+            headers:{"Content-Type":"application/json"},
+            body:JSON.stringify({
+                id:Date.now(),
+                title:productName.value,
+                price:productPrice.value,
+                category:"hechnima",
+                img: baseImg
+
+
+            })
+
+        })
+        .then((data)=>console.log(data))
+        .catch((err)=> console.log("Error",err))
+
+        
+      };
+      reader.readAsDataURL(file)
+      
+    } else {
+      console.log("Fayl turi rasm emas.");
+    }
+  } else {
+    console.log("Hech qanday fayl yuklanmagan.");
+  }
+});
+
+// admin panel form input finish 
+
+
+adminTodo.addEventListener("click", function(e) {
+    console.log(e.target.closest(".delete-btn"));
+    
+    if (e.target.closest(".delete-btn")) {
+      const productId = e.target.closest(".delete-btn").getAttribute("data-id");
+      deleteProduct(productId);
+    }
+  });
+
+
+function deleteProduct(productId) {
+    console.log(productId);
+    
+  fetch(`http://localhost:3000/products/${productId}`, {
+    method: 'DELETE',
+  })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Xato: Ma\'lumot o\'chirishda xatolik yuz berdi');
+      }
+      return response.json();
+    })
+    .then(() => {
+      console.log('Ma\'lumot o\'chirildi');
+      adminTodo.innerHTML = "";
+      fetchProducts();
+    })
+    .catch(error => {
+      console.error('Xato:', error);
+    });
+}
+
+function fetchProducts() {
+    fetch("http://localhost:3000/products")
+      .then((response) => response.json())
+      .then((data) => {
+        showTodo(data);
+      })
+      .catch((err) => {
+        console.log("Xato:", err);
+      });
+}
+// delete finish 
+
