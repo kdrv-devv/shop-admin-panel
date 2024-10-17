@@ -66,8 +66,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // start todo output
+let adminTodo = document.querySelector(".todo-output");
 document.addEventListener("DOMContentLoaded", function () {
-  let adminTodo = document.querySelector(".todo-output");
 
   fetch("http://localhost:3000/products")
     .then((response) => response.json())
@@ -198,4 +198,3 @@ function fetchProducts() {
       });
 }
 // delete finish 
-
